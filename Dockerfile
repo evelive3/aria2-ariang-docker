@@ -45,6 +45,7 @@ COPY Caddyfile /usr/local/caddy/
 
 VOLUME /aria2/data
 VOLUME /aria2/conf
+VOLUME /aria2/cache
 
 EXPOSE 90
 
