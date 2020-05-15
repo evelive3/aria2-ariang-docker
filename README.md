@@ -52,7 +52,7 @@ Please visit [http://ariang.mayswind.net/latest](http://ariang.mayswind.net/late
 ### Docker
 
 ```bash
-docker run -d --name ariang -p 8080:8080 hurlenko/aria2-ariang
+docker run -d --name ariang -p 90:90 evelive3/aria2-ariang
 ```
 
 To run as a different user and to map custom volume locations use:
@@ -60,15 +60,17 @@ To run as a different user and to map custom volume locations use:
 ```bash
 docker run -d \
     --name aria2-ui \
-    -p 8080:8080 \
+    -p 90:90 \
     -v /DOWNLOAD_DIR:/aria2/data \
     -v /CONFIG_DIR:/aria2/conf \
     -e PUID=1000 \
     -e PGID=1000 \
-    -e ARIA2RPCPORT=443 \
+    -e ARIA2RPCPORT=91 \
     -e DOMAIN=https://ariang.com \
     -e RPC_SECRET=NOBODYKNOWSME \
-    hurlenko/aria2-ariang
+    -e USER=user \
+    -e PWD=password \
+    evelive3/aria2-ariang
 ```
 
 ### docker-compose
@@ -80,9 +82,9 @@ version: "3"
 
 services:
   ariang:
-    image: hurlenko/aria2-ariang
+    image: evelive3/aria2-ariang
     ports:
-      - 443:8080
+      - 90:90
     volumes:
       - /DOWNLOAD_DIR:/aria2/data
       - /CONFIG_DIR:/aria2/conf
@@ -90,8 +92,8 @@ services:
       - PUID=1000
       - PGID=1000
       - RPC_SECRET=secret
-      - DOMAIN=0.0.0.0:8080
-      - ARIA2RPCPORT=443
+      - DOMAIN=0.0.0.0:90
+      - ARIA2RPCPORT=91
     restart: always
 ```
 
