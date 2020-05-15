@@ -6,8 +6,8 @@ ARG VCS_REF
 
 ENV DOMAIN=0.0.0.0:90
 ENV ARIA2RPCPORT=90
-ENV USER=user
-ENV PWD=pwd
+ENV ARIA2_USER=user
+ENV ARIA2_PWD=pwd
 
 LABEL maintainer="hurlenko" \
     org.label-schema.build-date=$BUILD_DATE \
