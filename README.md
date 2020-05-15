@@ -153,7 +153,7 @@ id username
 ## Building
 
 ```bash
-git clone https://github.com/hurlenko/aria2-ariang-docker
+git clone https://github.com/evelive3/aria2-ariang-docker
 cd aria2-ariang-docker
-docker build -t hurlenko/aria2-ariang .
+docker build -t evelive3/aria2-ariang --build-arg ARIANG_VERSION=1.1.6 .
 ```
