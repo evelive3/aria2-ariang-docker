@@ -22,6 +22,9 @@ LABEL maintainer="hurlenko" \
     org.label-schema.vendor="hurlenko" \
     org.label-schema.schema-version="1.0"
 
+# use TUNA mirror source
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
+
 RUN apk update \
     && apk add --no-cache --update caddy aria2 su-exec
 
