@@ -4,8 +4,10 @@ ARG ARIANG_VERSION
 ARG BUILD_DATE
 ARG VCS_REF
 
-ENV DOMAIN=0.0.0.0:8080
-ENV ARIA2RPCPORT=8080
+ENV DOMAIN=0.0.0.0:90
+ENV ARIA2RPCPORT=90
+ENV USER=user
+ENV PWD=pwd
 
 LABEL maintainer="hurlenko" \
     org.label-schema.build-date=$BUILD_DATE \
@@ -41,7 +43,7 @@ COPY Caddyfile /usr/local/caddy/
 VOLUME /aria2/data
 VOLUME /aria2/conf
 
-EXPOSE 8080
+EXPOSE 90
 
 ENTRYPOINT ["/bin/sh"]
 CMD ["./start.sh"]
