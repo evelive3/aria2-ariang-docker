@@ -63,6 +63,7 @@ docker run -d \
     -p 90:90 \
     -v /DOWNLOAD_DIR:/aria2/data \
     -v /CONFIG_DIR:/aria2/conf \
+    -v /CACHE_DIR:/aria2/cache \
     -e PUID=1000 \
     -e PGID=1000 \
     -e DOMAIN=https://ariang.com \
@@ -87,6 +88,7 @@ services:
     volumes:
       - /DOWNLOAD_DIR:/aria2/data
       - /CONFIG_DIR:/aria2/conf
+      - /CACHE_DIR:/aria2/cache
     environment:
       - PUID=1000
       - PGID=1000
