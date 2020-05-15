@@ -9,4 +9,6 @@
   timeouts none
   gzip
   errors stdout
+  
+  basic / {$USER} {$PWD}
 }
