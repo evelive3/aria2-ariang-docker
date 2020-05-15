@@ -65,11 +65,10 @@ docker run -d \
     -v /CONFIG_DIR:/aria2/conf \
     -e PUID=1000 \
     -e PGID=1000 \
-    -e ARIA2RPCPORT=91 \
     -e DOMAIN=https://ariang.com \
     -e RPC_SECRET=NOBODYKNOWSME \
-    -e USER=user \
-    -e PWD=password \
+    -e ARIA2_USER=user \
+    -e ARIA2_PWD=pwd \
     evelive3/aria2-ariang
 ```
 
@@ -93,7 +92,6 @@ services:
       - PGID=1000
       - RPC_SECRET=secret
       - DOMAIN=0.0.0.0:90
-      - ARIA2RPCPORT=91
     restart: always
 ```
 
