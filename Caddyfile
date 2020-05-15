@@ -10,5 +10,5 @@
   gzip
   errors stdout
   
-  basic / {$USER} {$PWD}
+  basicauth / {$USER} {$PWD}
 }
