@@ -1,6 +1,6 @@
 {$DOMAIN} {
 
-  proxy /jsonrpc localhost:6800 {
+  proxy /jsonrpc localhost:{$ARIA2RPCPORT} {
     transparent
     websocket
   }
