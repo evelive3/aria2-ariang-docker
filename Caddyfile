@@ -10,5 +10,5 @@
   gzip
   errors stdout
   
-  basicauth / {$USER} {$PWD}
+  basicauth / {$ARIA2_USER} {$ARIA2_PWD}
 }
