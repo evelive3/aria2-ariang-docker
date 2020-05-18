@@ -4,12 +4,21 @@ conf_path=/aria2/conf
 conf_copy_path=/aria2/conf-copy
 data_path=/aria2/data
 cache_path=/aria2/cache
+cache_copy_path=/aria2/cache-copy
 
 if [ ! -f $conf_path/aria2.conf ]; then
 	cp $conf_copy_path/aria2.conf $conf_path/aria2.conf
     if [ -n "$RPC_SECRET" ]; then
         printf '\nrpc-secret=%s\n' ${RPC_SECRET} >> $conf_path/aria2.conf
     fi
+fi
+
+if [ ! -f $cache_path/dht.dat ]; then
+	cp $cache_copy_path/dht.dat $cache_path/dht.dat
+fi
+
+if [ ! -f $cache_path/dht6.dat ]; then
+	cp $cache_copy_path/dht6.dat $cache_path/dht6.dat
 fi
 
 touch $conf_path/aria2.session
