@@ -39,8 +39,8 @@ RUN wget --no-check-certificate https://github.com/mayswind/AriaNg/releases/down
 
 WORKDIR /aria2
 # DHT data https://github.com/P3TERX/aria2.conf.git
-COPY dht.dat ./cache/dht.data
-COPY dht6.dat ./cache/dht6.dat
+COPY dht.dat ./cache-copy/dht.data
+COPY dht6.dat ./cache-copy/dht6.dat
 
 COPY aria2.conf ./conf-copy/aria2.conf
 COPY start.sh ./
